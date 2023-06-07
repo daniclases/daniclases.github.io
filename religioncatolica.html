@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Religión Católica</title>
-	<link rel="icon" type="image/png" href="https://daniclases.github.io/Yo%20blog.png">
+  <title>Religión Católica</title>
+  <link rel="icon" type="image/png" href="https://daniclases.github.io/Yo%20blog.png">
   <style>
-	  img {
-  pointer-events: none;
-}
-	  img {
-  user-select: none;
-}
-	  .unselectable {
+    img {
+      pointer-events: none;
+    }
+    img {
+      user-select: none;
+    }
+    .unselectable {
       user-select: none;
     }
     header {
@@ -30,6 +30,8 @@
       justify-content: center;
       align-items: center;
       flex-wrap: wrap; /* Se envuelven los botones en varias filas en pantallas pequeñas */
+      position: relative; /* Agregado */
+      z-index: 1; /* Agregado */
     }
     .button {
       border: none;
@@ -91,7 +93,7 @@
     .arte {
       background-color: #ee82ee; /* violet */
     }
-	 .email {
+    .email {
       text-align: center;
       margin-top: 50px; /* separa más el email hacia abajo */
     }
@@ -102,12 +104,12 @@
       color: blue;
       text-decoration: underline;
     }
-	  .pagina {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-	   footer {
+    .pagina {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    footer {
       background-color: #b3d9ff;
       margin-top: 20px; /* se coloca debajo de todos los elementos flotantes anteriores */
       padding: 10px;
@@ -116,60 +118,60 @@
   </style>
 </head>
 <body> 
-	 <div class="unselectable">
-	<header> 
-		 <div class="imagen" style="position: relative;"> <img src="https://daniclases.github.io/estante.png" alt="Estante" draggable="false" style="width: 100%; height: 100%;"> <a href="https://daniclases.github.io/" style="position: absolute; top: 0; left: 0;"> <img src="https://daniclases.github.io/Yo%20blog.png" alt="Logo" style="width: 100px; height: 100px;"> </a> </div> 
-	</header>
-	<div class="button-container">
-	  <button class="button fe">FE
-	    <div class="dropdown">
-	      <ul>
-	      </ul>
-	    </div>
-	  </button>
-	  <button class="button biblia">BIBLIA
-	    <div class="dropdown">
-	      <ul>
-	        <li><a href="https://daniclases.github.io/historiasalvacion.html">Historia de la Salvación</a></li>
-	      </ul>
-	    </div>
-	  </button>
-	  <button class="button historia">HISTORIA
-	    <div class="dropdown">
-	      <ul>
-	      </ul>
-	    </div>
-	  </button>
-	  <button class="button teologia">TEOLOGÍA
-	    <div class="dropdown">
-	      <ul>
-	      </ul>
-	    </div>
-	  </button>
-	  <button class="button eclesiologia">ECLESIOLOGÍA
-	    <div class="dropdown">
-	      <ul>
-	      </ul>
-	    </div>
-	  </button>
-	  <button class="button religiones">RELIGIONES
-	    <div class="dropdown">
-	      <ul>
-	      </ul>
-	    </div>
-	  </button>
-	  <button class="button arte">ARTE
-	    <div class="dropdown">
-	      <ul>
-	      </ul>
-	    </div>
-	  </button>
-	</div>
-       <br>
-	<footer>
-	  <div class="email">
-	  <span><a href="mailto:dnavcam363@g.educaand.es" target="_blank">📧</a> dnavcam363@g.educaand.es</span> <!-- abre el email en una nueva pestaña -->
-	</div>
-	</footer>
-		</body>
+  <div class="unselectable">
+    <header> 
+      <div class="imagen" style="position: relative;"> <img src="https://daniclases.github.io/estante.png" alt="Estante" draggable="false" style="width: 100%; height: 100%;"> <a href="https://daniclases.github.io/" style="position: absolute; top: 0; left: 0;"> <img src="https://daniclases.github.io/Yo%20blog.png" alt="Logo" style="width: 100px; height: 100px;"> </a> </div> 
+    </header>
+    <div class="button-container">
+      <button class="button fe">FE
+        <div class="dropdown">
+          <ul>
+          </ul>
+        </div>
+      </button>
+      <button class="button biblia">BIBLIA
+        <div class="dropdown">
+          <ul>
+            <li><a href="https://daniclases.github.io/historiasalvacion.html">Historia de la Salvación</a></li>
+          </ul>
+        </div>
+      </button>
+      <button class="button historia">HISTORIA
+        <div class="dropdown">
+          <ul>
+          </ul>
+        </div>
+      </button>
+      <button class="button teologia">TEOLOGÍA
+        <div class="dropdown">
+          <ul>
+          </ul>
+        </div>
+      </button>
+      <button class="button eclesiologia">ECLESIOLOGÍA
+        <div class="dropdown">
+          <ul>
+          </ul>
+        </div>
+      </button>
+      <button class="button religiones">RELIGIONES
+        <div class="dropdown">
+          <ul>
+          </ul>
+        </div>
+      </button>
+      <button class="button arte">ARTE
+        <div class="dropdown">
+          <ul>
+          </ul>
+        </div>
+      </button>
+    </div>
+    <br>
+    <footer>
+      <div class="email">
+      <span><a href="mailto:dnavcam363@g.educaand.es" target="_blank">📧</a> dnavcam363@g.educaand.es</span> <!-- abre el email en una nueva pestaña -->
+    </div>
+    </footer>
+  </body>
 </html>
