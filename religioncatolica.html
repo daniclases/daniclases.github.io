@@ -25,6 +25,71 @@
       max-width: 1000px;
       margin: 0 auto;
     }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .button {
+      border: none;
+      color: white;
+      padding: 15px 25px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 50px;
+      margin: 10px;
+      cursor: pointer;
+      position: relative;
+    }
+    .button:hover .dropdown {
+      display: block;
+    }
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+    .dropdown ul {
+      list-style-type: none;
+      padding: 10px;
+    }
+    .dropdown li {
+      padding: 10px;
+    }
+    .dropdown li:hover {
+      background-color: #f0f0f0;
+    }
+    .dropdown a {
+      color: black;
+      text-decoration: none;
+    }
+    .fe {
+      background-color: #ff0000; /* red */
+    }
+    .biblia {
+      background-color: #ffa500; /* orange */
+    }
+    .historia {
+      background-color: #ffff00; /* yellow */
+    }
+    .teologia {
+      background-color: #008000; /* green */
+    }
+    .eclesiologia {
+      background-color: #0000ff; /* blue */
+    }
+    .religiones {
+      background-color: #4b0082; /* indigo */
+    }
+    .arte {
+      background-color: #ee82ee; /* violet */
+    }
   </style>
 </head>
 <body> 
@@ -32,6 +97,69 @@
 	<header> 
 		 <div class="imagen" style="position: relative;"> <img src="https://daniclases.github.io/estante.png" alt="Estante" draggable="false" style="width: 100%; height: 100%;"> <a href="https://daniclases.github.io/" style="position: absolute; top: 0; left: 0;"> <img src="https://daniclases.github.io/Yo%20blog.png" alt="Logo" style="width: 100px; height: 100px;"> </a> </div> 
 	</header>
-	</div>
-</body>
+	<div class="button-container">
+	  <button class="button fe">FE
+	    <div class="dropdown">
+	      <ul>
+	        <li><a href="#">Creo en Dios</a></li>
+	        <li><a href="#">Creo en Jesucristo</a></li>
+	        <li><a href="#">Creo en el Espíritu Santo</a></li>
+	      </ul>
+	    </div>
+	  </button>
+	  <button class="button biblia">BIBLIA
+	    <div class="dropdown">
+	      <ul>
+	        <li><a href="#">Antiguo Testamento</a></li>
+	        <li><a href="#">Nuevo Testamento</a></li>
+	        <li><a href="#">Lectura Orante</a></li>
+	      </ul>
+	    </div>
+	  </button>
+	  <button class="button historia">HISTORIA
+	    <div class="dropdown">
+	      <ul>
+	        <li><a href="#">Historia de la Iglesia</a></li>
+	        <li><a href="#">Historia de las Religiones</a></li>
+	        <li><a href="#">Historia del Arte Sacro</a></li>
+	      </ul>
+	    </div>
+	  </button>
+		 <button class="button historia">TEOLOGÍA
+	    <div class="dropdown">
+	      <ul>
+	        <li><a href="#">Historia de la Iglesia</a></li>
+	        <li><a href="#">Historia de las Religiones</a></li>
+	        <li><a href="#">Historia del Arte Sacro</a></li>
+	      </ul>
+	    </div>
+	  </button>
+		 <button class="button historia">ECLESIOLOGÍA
+	    <div class="dropdown">
+	      <ul>
+	        <li><a href="#">Historia de la Iglesia</a></li>
+	        <li><a href="#">Historia de las Religiones</a></li>
+	        <li><a href="#">Historia del Arte Sacro</a></li>
+	      </ul>
+	    </div>
+	  </button>
+		 <button class="button historia">RELIGIONES
+	    <div class="dropdown">
+	      <ul>
+	        <li><a href="#">Historia de la Iglesia</a></li>
+	        <li><a href="#">Historia de las Religiones</a></li>
+	        <li><a href="#">Historia del Arte Sacro</a></li>
+	      </ul>
+	    </div>
+	  </button>
+		 <button class="button historia">ARTE
+	    <div class="dropdown">
+	      <ul>
+	        <li><a href="#">Historia de la Iglesia</a></li>
+	        <li><a href="#">Historia de las Religiones</a></li>
+	        <li><a href="#">Historia del Arte Sacro</a></li>
+	      </ul>
+	    </div>
+	  </button>
+		</body>
 </html>
