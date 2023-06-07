@@ -47,13 +47,11 @@
     }
     .button:hover .dropdown {
       display: block;
+      position: absolute; /* Agregado */
+      z-index: 2; /* Agregado */
     }
     .dropdown {
       display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
       background-color: white;
       border-radius: 10px;
       box-shadow: 0 5px 10px rgba(0,0,0,0.1);
