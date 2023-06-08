@@ -37,6 +37,18 @@
         .botones-container {
             margin-top: 200px; /* Espacio para el logo */
         }
+
+        /* Estilo para los botones a la izquierda */
+        .botones-container div:nth-child(odd) {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        /* Estilo para los botones a la derecha */
+        .botones-container div:nth-child(even) {
+            display: flex;
+            justify-content: flex-end;
+        }
     </style>
 </head>
 <body>
