@@ -12,24 +12,8 @@
             overflow: hidden;
         }
 
-        .mapa:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 2px; /* Ajustar el grosor de la línea */
-            height: 100%;
-            background-image: linear-gradient(to bottom, transparent 0%, transparent 33%, #fff 33%, #fff 66%, transparent 66%, transparent 100%);
-            z-index: 1;
-            animation: wave 2s linear infinite;
-        }
-
-        @keyframes wave {
-            0% { background-position: 0 -100%; }
-            100% { background-position: 0 100%; }
-        }
-
+        /* Comentario: Se elimina el código CSS para la línea roja */
+        
         .boton {
             display: block;
             padding: 10px 20px;
