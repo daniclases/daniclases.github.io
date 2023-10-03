@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Dani clases</title>
-	<link rel="icon" type="image/png" href="https://daniclases.github.io/Yo%20blog.png">
+    <title>Dani clases</title>
+    <link rel="icon" type="image/png" href="https://daniclases.github.io/Yo%20blog.png">
   <style>
-	  img {
+      img {
   pointer-events: none;
 }
-	  img {
+      img {
   user-select: none;
 }
-	  .unselectable {
+      .unselectable {
       user-select: none;
     }
     header {
@@ -41,17 +41,49 @@
       margin-top: 20px;
       margin-left: 20px;
     }
-    .cross-button:before {
-      content: "\271A";
-      margin-right: 10px;
+    .boton-imagen {
+      display: inline-block;
+      margin: 20px;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
+    .boton-imagen img {
+      display: block;
+      width: 200px;
+      height: 200px;
+      margin-bottom: 10px;
+    }
+    .boton-imagen span {
+      display: block;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
     }
   </style>
 </head>
 <body> 
-	 <div class="unselectable">
-	<header> 
-		 <div class="imagen" style="position: relative;"> <img src="https://daniclases.github.io/home.jpg" alt="Estante" draggable="false" style="width: 100%; height: 100%;"> <a href="https://daniclases.github.io/" style="position: absolute; top: 0; left: 0;"> <img src="https://daniclases.github.io/Yo%20blog.png" alt="Logo" style="width: 100px; height: 100px;"> </a> </div> 
-	</header>
-		<p style="text-align: center; font-style: italic; font-size: 30px;">"Todo es difícil antes de ser sencillo"</p>
+    <header> 
+        <div class="imagen" style="position: relative;"> 
+            <img src="https://daniclases.github.io/home.jpg" alt="Estante" draggable="false" style="width: 100%; height: 100%;"> 
+            <a href="https://daniclases.github.io/" style="position: absolute; top: 0; left: 0;"> 
+                <img src="https://daniclases.github.io/Yo%20blog.png" alt="Logo" style="width: 100px; height: 100px;"> 
+            </a> 
+        </div> 
+    </header>
+    <div class="responsive-element">
+        <button class="boton-imagen">
+            <img src="valores-eticos.jpg" alt="Valores Éticos">
+            <span>Valores Éticos</span>
+        </button>
+        <button class="boton-imagen">
+            <img src="filosofia.jpg" alt="Filosofía">
+            <span>Filosofía</span>
+        </button>
+        <button class="boton-imagen">
+            <img src="historia-filosofia.jpg" alt="Historia de la Filosofía">
+            <span>Historia de la Filosofía</span>
+        </button>
+    </div>
 </body>
 </html>
