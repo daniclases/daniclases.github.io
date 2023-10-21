@@ -1,1 +1,116 @@
-hola mundo
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Educación en valores cívicos y éticos</title>
+    <link rel="icon" type="image/png" href="https://daniclases.github.io/Yo%20blog.png">
+    <style>
+        img {
+            pointer-events: none;
+            user-select: none;
+        }
+        .unselectable {
+            user-select: none;
+        }
+        body {
+            margin: 0;
+            background: url('https://daniclases.github.io/atenas.png') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .responsive-element {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 1000px;
+            display: flex;
+            justify-content: center; /* Centrar los botones horizontalmente */
+            flex-wrap: wrap;
+            z-index: 2;
+            overflow-y: auto; /* Agregado para permitir el desplazamiento vertical */
+        }
+        .boton-imagen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 40px; /* Aumentar el margen horizontal para separar los botones */
+            border: none;
+            background-color: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            width: 300px;
+            height: 300px;
+            border-radius: 150px;
+            overflow: hidden;
+            position: relative;
+        }
+        .boton-imagen img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .boton-imagen span {
+            z-index: 2;
+            position: relative;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 3;
+        }
+        .logo img {
+            width: 100px;
+            height: 100px;
+        }
+
+        @media (max-width: 768px) {
+            .responsive-element {
+                flex-direction: column; /* Esto hará que los botones se apilen verticalmente */
+                align-items: center;
+                height: auto; /* Cambiado a auto para adaptarse al contenido */
+                padding-bottom: 20px; /* Agregado un pequeño padding en la parte inferior */
+            }
+            .boton-imagen {
+                margin: 20px; /* Restablecer el margen para dispositivos móviles */
+            }
+        }
+    </style>
+</head>
+<body> 
+    <a href="https://daniclases.github.io/" class="logo"> 
+        <img src="https://daniclases.github.io/Yo%20blog.png" alt="Logo"> 
+    </a> 
+    <div class="responsive-element">
+        <button class="boton-imagen" onclick="window.location.href='https://www.google.com/'">
+            <img src="https://daniclases.github.io/autoconocimiento.png" alt="Autoconocimiento">
+            <span>Autoconocimiento</span>
+        </button>
+        <button class="boton-imagen" onclick="window.location.href='https://www.google.com/'">
+            <img src="https://daniclases.github.io/etica.png" alt="Autonomía moral">
+            <span>Autonomía moral</span>
+        </button>
+        <button class="boton-imagen" onclick="window.location.href='https://www.google.com/'">
+            <img src="https://daniclases.github.io/politica.png" alt="Colaborando en sociedad">
+            <span>Colaborando en sociedad</span>
+        </button>
+       <button class="boton-imagen" onclick="window.location.href='https://www.google.com/'">
+            <img src="https://daniclases.github.io/sostenibilidad.png" alt="Sostenibilidad">
+            <span>Sostenibilidad</span>
+        </button>
+    </div>
+</body>
+</html>
