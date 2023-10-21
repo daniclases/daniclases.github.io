@@ -23,7 +23,7 @@
             max-width: 1000px;
             margin: 0 auto;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             flex-wrap: wrap;
         }
         .cross-button {
@@ -43,7 +43,10 @@
             margin-left: 20px;
         }
         .boton-imagen {
-            display: inline-block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             margin: 20px;
             border: none;
             background-color: transparent;
@@ -61,12 +64,6 @@
             font-weight: bold;
             text-align: center;
         }
-        button:nth-child(2) {
-            margin-right: 10px;
-        }
-        button:nth-child(3) {
-            margin-left: 10px;
-        }
     </style>
 </head>
 <body> 
@@ -80,17 +77,17 @@
     </header>
     <div class="responsive-element">
         <button class="boton-imagen" onclick="window.location.href='https://www.google.com/'">
-    <img src="https://daniclases.github.io/justicia.jpg" alt="Educación en valores cívicos y éticos">
-    <span>Educación en valores cívicos y éticos</span>
-</button>
-<button class="boton-imagen" onclick="window.location.href='https://www.google.com/'">
-    <img src="https://daniclases.github.io/pensador.jpg" alt="Filosofía 1ºBach">
-    <span>Filosofía 1ºBach</span>
-</button>
-<button class="boton-imagen" onclick="window.location.href='https://www.google.com/'">
-    <img src="https://daniclases.github.io/historia.jpg" alt="Historia de la Filosofía">
-    <span>Historia de la Filosofía</span>
-</button>
+            <img src="https://daniclases.github.io/justicia.jpg" alt="Educación en valores cívicos y éticos">
+            <span>Educación en valores cívicos y éticos</span>
+        </button>
+        <button class="boton-imagen" onclick="window.location.href='https://www.google.com/'">
+            <img src="https://daniclases.github.io/pensador.jpg" alt="Filosofía 1ºBach">
+            <span>Filosofía 1ºBach</span>
+        </button>
+        <button class="boton-imagen" onclick="window.location.href='https://www.google.com/'">
+            <img src="https://daniclases.github.io/historia.jpg" alt="Historia de la Filosofía">
+            <span>Historia de la Filosofía</span>
+        </button>
     </div>
 </body>
 </html>
