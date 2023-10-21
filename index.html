@@ -11,36 +11,25 @@
         .unselectable {
             user-select: none;
         }
-        header {
-            background-color: lightblue;
-            margin-bottom: 20px;
-        }
         body {
             margin: 0;
+            background: url('https://daniclases.github.io/home.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
         }
         .responsive-element {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             width: 80%;
             max-width: 1000px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-        }
-        .cross-button {
-            display: inline-block;
-            width: 250px;
-            height: 80px;
-            line-height: 80px;
-            border-radius: 40px;
-            background-color: #800080;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            font-size: 24px;
-            font-weight: bold;
-            font-family: Arial Unicode MS, sans-serif;
-            margin-top: 20px;
-            margin-left: 20px;
+            z-index: 2;
         }
         .boton-imagen {
             display: flex;
@@ -49,32 +38,49 @@
             justify-content: center;
             margin: 20px;
             border: none;
-            background-color: transparent;
+            background-color: rgba(255, 255, 255, 0.7);
             cursor: pointer;
+            width: 250px;
+            height: 250px;
+            border-radius: 125px;
+            overflow: hidden;
+            position: relative;
         }
         .boton-imagen img {
-            display: block;
-            width: 200px;
-            height: 200px;
-            margin-bottom: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
         }
         .boton-imagen span {
-            display: block;
+            z-index: 2;
+            position: relative;
             font-size: 24px;
             font-weight: bold;
             text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 3;
+        }
+        .logo img {
+            width: 100px;
+            height: 100px;
         }
     </style>
 </head>
 <body> 
-    <header> 
-        <div class="imagen" style="position: relative;"> 
-            <img src="https://daniclases.github.io/home.jpg" alt="Estante" draggable="false" style="width: 100%; height: 100%;"> 
-            <a href="https://daniclases.github.io/" style="position: absolute; top: 0; left: 0;"> 
-                <img src="https://daniclases.github.io/Yo%20blog.png" alt="Logo" style="width: 100px; height: 100px;"> 
-            </a> 
-        </div> 
-    </header>
+    <a href="https://daniclases.github.io/" class="logo"> 
+        <img src="https://daniclases.github.io/Yo%20blog.png" alt="Logo"> 
+    </a> 
     <div class="responsive-element">
         <button class="boton-imagen" onclick="window.location.href='https://www.google.com/'">
             <img src="https://daniclases.github.io/justicia.jpg" alt="Educación en valores cívicos y éticos">
