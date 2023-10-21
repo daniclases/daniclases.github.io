@@ -27,7 +27,7 @@
             width: 80%;
             max-width: 1000px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center; /* Centrar los botones horizontalmente */
             flex-wrap: wrap;
             z-index: 2;
             overflow-y: auto; /* Agregado para permitir el desplazamiento vertical */
@@ -37,7 +37,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin: 20px;
+            margin: 20px 40px; /* Aumentar el margen horizontal para separar los botones */
             border: none;
             background-color: rgba(255, 255, 255, 0.7);
             cursor: pointer;
@@ -79,9 +79,13 @@
 
         @media (max-width: 768px) {
             .responsive-element {
-                flex-direction: column;
+                flex-direction: column; /* Esto hará que los botones se apilen verticalmente */
                 align-items: center;
-                height: 80%; /* Establecer una altura para permitir el desplazamiento */
+                height: auto; /* Cambiado a auto para adaptarse al contenido */
+                padding-bottom: 20px; /* Agregado un pequeño padding en la parte inferior */
+            }
+            .boton-imagen {
+                margin: 20px; /* Restablecer el margen para dispositivos móviles */
             }
         }
     </style>
