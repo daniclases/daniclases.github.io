@@ -27,17 +27,17 @@
             width: 80%;
             max-width: 1000px;
             display: flex;
-            justify-content: center; /* Centrar los botones horizontalmente */
+            justify-content: center;
             flex-wrap: wrap;
             z-index: 2;
-            overflow-y: auto; /* Agregado para permitir el desplazamiento vertical */
+            overflow-y: auto;
         }
         .boton-imagen {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin: 20px 40px; /* Aumentar el margen horizontal para separar los botones */
+            margin: 20px 40px;
             border: none;
             background-color: rgba(255, 255, 255, 0.7);
             cursor: pointer;
@@ -46,10 +46,14 @@
             border-radius: 150px;
             overflow: hidden;
             position: relative;
-            transition: box-shadow 0.3s; /* Agregado para suavizar el cambio de sombra */
+            transition: opacity 0.3s;
         }
         .boton-imagen:hover {
-            box-shadow: 0 0 15px #00ff00, 0 0 25px #00ff00, 0 0 35px #ff00ff, 0 0 45px #ff00ff; /* Efecto de neón al pasar el cursor */
+            opacity: 0.8;
+            box-shadow: 0 0 15px #FF9933, 0 0 20px #FF9933, 0 0 25px #FF9933, 0 0 30px #FF9933;
+        }
+        .boton-imagen:hover span {
+            color: #FF9933;
         }
         .boton-imagen img {
             position: absolute;
@@ -69,10 +73,6 @@
             background-color: rgba(0, 0, 0, 0.5);
             padding: 5px 10px;
             border-radius: 10px;
-            transition: color 0.3s; /* Agregado para suavizar el cambio de color */
-        }
-        .boton-imagen:hover span {
-            color: blue; /* Cambio de color de las letras al pasar el cursor */
         }
         .logo {
             position: absolute;
@@ -84,24 +84,23 @@
             width: 100px;
             height: 100px;
         }
-
         @media (max-width: 768px) {
             .responsive-element {
-                flex-direction: column; /* Esto hará que los botones se apilen verticalmente */
+                flex-direction: column;
                 align-items: center;
-                height: auto; /* Cambiado a auto para adaptarse al contenido */
-                padding-bottom: 20px; /* Agregado un pequeño padding en la parte inferior */
+                height: auto;
+                padding-bottom: 20px;
             }
             .boton-imagen {
-                margin: 20px; /* Restablecer el margen para dispositivos móviles */
+                margin: 20px;
             }
         }
     </style>
 </head>
-<body> 
-    <a href="https://daniclases.github.io/" class="logo"> 
-        <img src="https://daniclases.github.io/Yo%20blog.png" alt="Logo"> 
-    </a> 
+<body>
+    <a href="https://daniclases.github.io/" class="logo">
+        <img src="https://daniclases.github.io/Yo%20blog.png" alt="Logo">
+    </a>
     <div class="responsive-element">
         <button class="boton-imagen" onclick="window.location.href='https://daniclases.github.io/evcye/'">
             <img src="https://daniclases.github.io/justicia.jpg" alt="Educación en valores cívicos y éticos">
