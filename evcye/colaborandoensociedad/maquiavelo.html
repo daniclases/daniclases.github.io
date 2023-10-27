@@ -6,19 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maquiavelo</title>
     <style>
-        img {
-            width: 150px; /* o el tamaño que prefieras */
-            height: auto;
-            margin: 10px;
-        }
-        .img-izquierda {
-            float: left;
-            margin-right: 20px;
-        }
-        .img-derecha {
-            float: right;
-            margin-right: 20px;
-        }
+       .container {
+         max-width: 800px;
+         margin: 0 auto;
+         padding: 20px;
+         text-align: center;
+      }
+      .text-with-image {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+      }
+      .text-with-image img {
+         margin-left: 20px;
+         width: 150px;
+      }
         body {
             margin: 40px;
             text-align: center;
