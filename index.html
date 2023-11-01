@@ -114,13 +114,11 @@
             padding: 20px;
             box-sizing: border-box;
         }
-        .login label,
-        .login input,
-        .login button,
         .login p {
             margin-bottom: 20px;
+            font-size: 2em; /* Aumenta el tamaño de la fuente */
+            font-family: 'Times New Roman', Times, serif; /* Cambia la fuente a Times New Roman para un estilo más clásico, similar al griego */
         }
-        .login input,
         .login button {
             width: 100%;
             max-width: 400px;
@@ -130,9 +128,7 @@
 </head>
 <body>
     <div id="login" class="login">
-        <p>Sólo sé que no sé...</p>
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" name="password">
+        <p>Sólo sé que no sé nada</p>
         <button onclick="checkPassword()">Ingresar</button>
     </div>
 
@@ -156,13 +152,8 @@
 
     <script>
         function checkPassword() {
-            var password = document.getElementById('password').value;
-            if (password == 'nada') {
-                document.getElementById('login').style.display = 'none';
-                document.body.style.overflow = 'auto';
-            } else {
-                alert('Contraseña incorrecta');
-            }
+            document.getElementById('login').style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
 
         window.onload = function() {
