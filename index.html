@@ -95,9 +95,44 @@
                 margin: 20px;
             }
         }
+        /* Estilos para el formulario de inicio de sesión */
+        .login {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            background-image: url('https://daniclases.github.io/puertaacademia.png');
+            background-size: cover;
+            border-radius: 10px;
+            text-align: center;
+            display: none;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .login label,
+        .login input,
+        .login button,
+        .login p {
+            margin-bottom: 10px;
+            display: block;
+        }
+        .login input,
+        .login button {
+            width: 100%;
+            box-sizing: border-box;
+        }
     </style>
 </head>
 <body>
+    <div id="login" class="login">
+        <p>Sólo sé que no sé...</p>
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password">
+        <button onclick="checkPassword()">Ingresar</button>
+    </div>
+
     <a href="https://daniclases.github.io/" class="logo">
         <img src="https://daniclases.github.io/Yo%20blog.png" alt="Logo">
     </a>
@@ -115,5 +150,22 @@
             <span>Historia de la Filosofía</span>
         </button>
     </div>
+
+    <script>
+        function checkPassword() {
+            var password = document.getElementById('password').value;
+            if (password == 'nada') {
+                document.getElementById('login').style.display = 'none';
+                document.body.style.overflow = 'auto';
+            } else {
+                alert('Contraseña incorrecta');
+            }
+        }
+
+        window.onload = function() {
+            document.getElementById('login').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+    </script>
 </body>
 </html>
