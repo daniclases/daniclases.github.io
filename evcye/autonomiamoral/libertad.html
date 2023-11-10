@@ -40,13 +40,15 @@
         } 
         .text-with-image {
             display: flex;
-            flex-direction: column; /* Cambio de dirección a columna */
-            align-items: left;
+            flex-direction: row; /* Cambia a disposición en fila */
+            align-items: flex-start; /* Alinea la imagen y el texto en la parte superior */
+            text-align: left; /* Alinea el texto a la izquierda */
             margin-bottom: 20px;
         }
         .text-with-image img {
-            margin-bottom: 20px; /* Añadir margen debajo de la imagen */
+            margin-right: 20px; /* Añade margen a la derecha de la imagen */
             width: 150px;
+            float: left; /* Hace que el texto fluya alrededor de la imagen */
         }
         .text-with-image p {
             flex: 1; /* Permite que el texto ocupe el espacio restante */
