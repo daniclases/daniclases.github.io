@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Filosofía contemporánea</title>
+    <link rel="icon" type="image/png" href="https://daniclases.github.io/Yo%20blog.png">
+    <style>
+        img {
+            pointer-events: none;
+            user-select: none;
+        }
+        .unselectable {
+            user-select: none;
+        }
+        body {
+            margin: 0;
+            background: url('https://daniclases.github.io/indiceautoconocimiento.png') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .responsive-element {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 1000px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            z-index: 2;
+            overflow-y: auto;
+        }
+        .temas-lista {
+            list-style-type: decimal;
+            padding-left: 20px;
+        }
+        .temas-lista li {
+            margin: 10px 0;
+            cursor: pointer;
+            transition: color 0.3s;
+            font-size: 20px;
+        }
+        .temas-lista li a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .temas-lista li:hover {
+            color: #FF9933;
+        }
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 3;
+        }
+        .logo img {
+            width: 100px;
+            height: 100px;
+        }
+        @media (max-width: 768px) {
+            .responsive-element {
+                flex-direction: column;
+                align-items: center;
+                height: auto;
+                padding-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="https://daniclases.github.io/" class="logo">
+        <img src="https://daniclases.github.io/Yo%20blog.png" alt="Logo">
+    </a>
+    <div class="responsive-element">
+        <ul class="temas-lista">
+            <li><a href="https://www.google.com/">Tema 1</a></li>
+        </ul>
+    </div>
+</body>
+</html>
