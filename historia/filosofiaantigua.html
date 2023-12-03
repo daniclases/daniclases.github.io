@@ -16,7 +16,7 @@
             background: url('https://daniclases.github.io/fondoantigua.png') no-repeat center center fixed;
             background-size: cover;
             height: 100vh;
-            overflow: hidden;
+            /* overflow: hidden; esta línea se ha eliminado para permitir el desplazamiento */
             position: relative;
         }
         .responsive-element {
@@ -30,24 +30,41 @@
             justify-content: center;
             flex-wrap: wrap;
             z-index: 2;
-            overflow-y: auto;
+            overflow-y: auto; /* Asegúrate de que esto esté aquí para permitir el desplazamiento dentro del elemento si es necesario */
         }
-        .temas-lista {
-            list-style-type: decimal;
-            padding-left: 20px;
-        }
-        .temas-lista li {
-            margin: 10px 0;
+        .boton-imagen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 40px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.7);
             cursor: pointer;
-            transition: color 0.3s;
-            font-size: 20px;
+            width: 300px;
+            height: 300px;
+            border-radius: 150px;
+            overflow: hidden;
+            position: relative;
+            transition: opacity 0.3s;
         }
-        .temas-lista li a {
-            text-decoration: none;
-            color: inherit;
+        .boton-imagen:hover {
+            opacity: 0.8;
+            box-shadow: 0 0 15px #FF9933, 0 0 20px #FF9933, 0 0 25px #FF9933, 0 0 30px #FF9933;
         }
-        .temas-lista li:hover {
+        .boton-imagen:hover span {
             color: #FF9933;
+        }
+        .boton-imagen span {
+            z-index: 2;
+            position: relative;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 10px;
         }
         .logo {
             position: absolute;
@@ -66,6 +83,22 @@
                 height: auto;
                 padding-bottom: 20px;
             }
+            .boton-imagen {
+                margin: 20px;
+            }
+        }
+        /* Estilos personalizados para la barra de desplazamiento */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
         }
     </style>
 </head>
@@ -74,12 +107,22 @@
         <img src="https://daniclases.github.io/Yo%20blog.png" alt="Logo">
     </a>
     <div class="responsive-element">
-        <ul class="temas-lista">
-            <li><a href="https://sites.google.com/view/textoplaton/inicio">Platón. Texto República Vll</a></li>
-            <li><a href="https://sites.google.com/view/platoncompletarfrases/inicio">Platón. Completar frases</a></li>
-            <li><a href="https://sites.google.com/view/aristotelesfilosofia">Aristóteles</a></li>
-            <li><a href="https://sites.google.com/view/helenismo/inicio">Helenismo</a></li>
-        </ul>
+        <button class="boton-imagen" onclick="window.location.href='https://sites.google.com/view/textoplaton/inicio'">
+            <img src="https://daniclases.github.io/antigua.png" alt="Filosofía antigua">
+            <span>Platón. Texto República Vll</span>
+        </button>
+        <button class="boton-imagen" onclick="window.location.href='https://sites.google.com/view/platoncompletarfrases/inicio'">
+            <img src="https://daniclases.github.io/antigua.png" alt="Filosofía antigua">
+            <span>Platón. Completar frases</span>
+        </button>
+        <button class="boton-imagen" onclick="window.location.href='https://sites.google.com/view/aristotelesfilosofia'">
+            <img src="https://daniclases.github.io/antigua.png" alt="Filosofía antigua">
+            <span>Aristóteles</span>
+        </button>
+        <button class="boton-imagen" onclick="window.location.href='https://sites.google.com/view/helenismo/inicio'">
+            <img src="https://daniclases.github.io/antigua.png" alt="Filosofía antigua">
+            <span>Helenismo</span>
+        </button>
     </div>
 </body>
 </html>
