@@ -52,22 +52,17 @@
             box-shadow: 0 0 15px #FF9933, 0 0 20px #FF9933, 0 0 25px #FF9933, 0 0 30px #FF9933;
         }
         .boton-imagen span {
-            display: flex;
-            align-items: center;
-            justify-content: center;
             z-index: 3;
             position: absolute;
-            width: 100%; /* Ancho completo del botón */
-            height: 100%; /* Altura completa del botón */
-            top: 0;
-            left: 0;
+            top: 50%; /* Centrar verticalmente */
+            left: 50%; /* Centrar horizontalmente */
+            transform: translate(-50%, -50%); /* Ajuste para centrar exactamente */
             font-size: 24px;
             font-weight: bold;
             color: white;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 150px; /* Hacer coincidir con el border-radius del botón */
-            padding: 5px 10px;
-            margin: 0; /* Eliminar cualquier margen */
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo solo para el texto */
+            padding: 5px 10px; /* Espaciado alrededor del texto */
+            border-radius: 10px; /* Bordes redondeados */
             text-align: center;
         }
         .boton-imagen img {
