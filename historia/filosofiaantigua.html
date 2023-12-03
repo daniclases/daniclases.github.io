@@ -4,7 +4,7 @@
     <title>Filosofía antigua</title>
     <link rel="icon" type="image/png" href="https://daniclases.github.io/Yo%20blog.png">
     <style>
-        img {
+         img {
             pointer-events: none;
             user-select: none;
         }
@@ -107,10 +107,18 @@
             background: #f1f1f1;
         }
         ::-webkit-scrollbar-thumb {
-            background: #888;
+            background-color: blue; /* color de fondo del thumb */
+            border: 3px solid orange; /* borde del thumb */
+            border-radius: 10px; /* redondez del thumb */
+            box-shadow: inset 0 0 6px rgba(0,0,0,0.5); /* sombra interna del thumb */
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #555;
+            background: #555; /* color de fondo del thumb al pasar el ratón */
+        }
+        /* Works on Firefox */
+        * {
+          scrollbar-color: blue orange; /* color del thumb y del track */
+          scrollbar-width: thin; /* ancho de la barra de desplazamiento */
         }
     </style>
 </head>
