@@ -46,20 +46,21 @@
         <button onclick="insertar(' ∧ ')">∧</button>
         <button onclick="insertar(' ∨ ')">∨</button>
         <button onclick="insertar(' ¬')">¬</button>
+        <button onclick="insertar(' ⊕ ')">⊕</button>
+        <button onclick="insertar(' → ')">→</button>
+        <button onclick="insertar(' ↔ ')">↔</button>
         <button onclick="insertar(' (')">(</button>
         <button onclick="insertar(' )')">)</button>
     </div>
     <div id="visualizacionArbol"></div>
 
     <script>
-        // Inserción de caracteres en el campo de texto
         function insertar(caracter) {
             const input = document.getElementById('expresionLogica');
             input.value += caracter;
             input.focus();
         }
 
-        // Definición de la clase Nodo
         class Nodo {
             constructor(valor, izquierda = null, derecha = null) {
                 this.valor = valor;
@@ -68,111 +69,43 @@
             }
         }
 
-        // Analizar la expresión lógica (implementación simplificada)
         function analizarExpresion(expresion) {
-            // Lógica para analizar la expresión y construir el árbol
+            let tokens = expresion.split(' ');
+            let nodos = tokens.map(token => new Nodo(token));
+            for (let i = 0; i < nodos.length - 1; i++) {
+                nodos[i].derecha = nodos[i + 1];
+            }
+            return nodos.length > 0 ? nodos[0] : null;
         }
 
-        // Visualizar el árbol de análisis
-        function visualizarArbol(nodo, padreId = '') {
-            // Lógica para crear la estructura HTML del árbol
+        function visualizarArbol(nodo) {
+            if (!nodo) return document.createElement('div');
+
+            let nodoDiv = document.createElement('div');
+            nodoDiv.className = 'nodo';
+            nodoDiv.textContent = nodo.valor;
+
+            let hijosDiv = document.createElement('div');
+            hijosDiv.className = 'ramas';
+            hijosDiv.appendChild(visualizarArbol(nodo.izquierda));
+            hijosDiv.appendChild(visualizarArbol(nodo.derecha));
+
+            let arbolDiv = document.createElement('div');
+            arbolDiv.className = 'arbol';
+            arbolDiv.appendChild(nodoDiv);
+            arbolDiv.appendChild(hijosDiv);
+
+            return arbolDiv;
         }
 
-        // Actualizar el valor de un nodo y reconstruir el árbol
-        function actualizarNodo(nodo, nuevoValor) {
-            nodo.valor = nuevoValor;
-            // Reconstruir el árbol si es necesario
-        }
-
-        // Editar un nodo del árbol
-        function editarNodo(nodoId, nodo) {
-            // Lógica para editar un nodo y actualizar el árbol
-        }
-
-        // Función para analizar y visualizar la expresión lógica
         function analizarYVisualizar() {
             const expresion = document.getElementById('expresionLogica').value;
-            try {
-                const arbol = analizarExpresion(expresion);
-                const visualizacion = visualizarArbol(arbol);
-                document.getElementById('visualizacionArbol').innerHTML = visualizacion;
-            } catch (error) {
-                document.getElementById('visualizacionArbol').innerHTML = `<p class="error">Error: ${error.message}</p>`;
-            }
+            const arbol = analizarExpresion(expresion);
+            const visualizacion = visualizarArbol(arbol);
+            const contenedor = document.getElementById('visualizacionArbol');
+            contenedor.innerHTML = '';
+            contenedor.appendChild(visualizacion);
         }
-
-        // Implementación de las funciones adicionales para interactividad
-      class Nodo {
-    constructor(valor, izquierda = null, derecha = null) {
-        this.valor = valor;
-        this.izquierda = izquierda;
-        this.derecha = derecha;
-    }
-}
-
-function actualizarNodo(nodo, nuevoValor) {
-    nodo.valor = nuevoValor;
-    // Aquí podrías añadir más lógica si la actualización del nodo afecta a otros nodos
-}
-
-function crearElementoNodo(nodo, padreId) {
-    let nodoElemento = document.createElement('div');
-    nodoElemento.className = 'nodo';
-    nodoElemento.id = 'nodo-' + padreId;
-    nodoElemento.innerText = nodo.valor;
-    
-    nodoElemento.onclick = function() {
-        editarNodo(nodoElemento.id, nodo);
-    };
-
-    return nodoElemento;
-}
-
-function visualizarArbol(nodo, padreId = '') {
-    if (!nodo) return;
-
-    let nodoElemento = crearElementoNodo(nodo, padreId);
-    let arbolElemento = document.createElement('div');
-    arbolElemento.className = 'arbol';
-    arbolElemento.appendChild(nodoElemento);
-
-    let ramasElemento = document.createElement('div');
-    ramasElemento.className = 'ramas';
-
-    let ramaIzquierda = visualizarArbol(nodo.izquierda, nodoElemento.id + '-izq');
-    let ramaDerecha = visualizarArbol(nodo.derecha, nodoElemento.id + '-der');
-
-    if (ramaIzquierda) ramasElemento.appendChild(ramaIzquierda);
-    if (ramaDerecha) ramasElemento.appendChild(ramaDerecha);
-
-    arbolElemento.appendChild(ramasElemento);
-
-    return arbolElemento;
-}
-
-        // como expandir/colapsar nodos y editar directamente en la visualización.
-      function editarNodo(nodoId, nodo) {
-    let nodoElemento = document.getElementById(nodoId);
-    let input = document.createElement('input');
-    input.type = 'text';
-    input.value = nodo.valor;
-    input.onblur = function() {
-        actualizarNodo(nodo, input.value);
-        reconstruirYVisualizarArbol();
-    };
-    nodoElemento.innerHTML = '';
-    nodoElemento.appendChild(input);
-    input.focus();
-}
-
-function reconstruirYVisualizarArbol() {
-    // Suponiendo que tienes una variable global `arbolRaiz` que representa el árbol
-    let visualizacion = visualizarArbol(arbolRaiz);
-    let contenedorArbol = document.getElementById('visualizacionArbol');
-    contenedorArbol.innerHTML = '';
-    contenedorArbol.appendChild(visualizacion);
-}
-
     </script>
 </body>
 </html>
