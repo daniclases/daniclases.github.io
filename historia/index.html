@@ -95,6 +95,39 @@
                 margin: 20px;
             }
         }
+        .boton-rectangular {
+     margin: 20px;
+            border: none;
+            background-color: #4CAF50; /* Color de fondo del botón */
+            color: white; /* Color del texto */
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+    position: relative; /* necesario para posicionar la imagen y el span */
+    overflow: hidden; /* para mantener la imagen dentro de los bordes del botón */
+}
+
+.boton-rectangular img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s; /* transición suave */
+}
+
+.boton-rectangular span {
+    position: relative; /* para asegurar que el texto esté sobre la imagen */
+    z-index: 2;
+}
+
+.boton-rectangular:hover img {
+    opacity: 0.8; /* efecto de iluminación */
+    box-shadow: 0 0 15px #00FF00, 0 0 20px #00FF00, 0 0 25px #00FF00, 0 0 30px #00FF00; /* sombras verdes */
+}
     </style>
 </head>
 <body>
@@ -118,6 +151,10 @@
             <img src="https://daniclases.github.io/contemporanea.png" alt="Filosofía contemporánea">
             <span>Filosofía contemporánea</span>
         </button>
+        <button class="boton-rectangular" onclick="window.location.href='https://sites.google.com/view/orientacionespevau'">
+    <img src="https://daniclases.github.io/botonorientacionespevau.png" alt="Orientaciones PEvAU"> <!-- Cambiar 'tuImagen.jpg' y 'Descripción de la imagen' -->
+    <span>Orientaciones PEvAU</span>
+</button>
     </div>
 </body>
 </html>
