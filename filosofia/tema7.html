@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>La lógica</title>
+    <title>Lógica</title>
     <link rel="icon" type="image/png" href="https://daniclases.github.io/Yo%20blog.png">
     <style>
-        img {
+         img {
             pointer-events: none;
             user-select: none;
         }
         .unselectable {
             user-select: none;
         }
-        body {
+        html, body {
+            min-height: 100%; /* Ajuste para asegurar que el body tome toda la altura */
             margin: 0;
+            padding: 0;
+            overflow-y: auto; /* Aplicar desplazamiento al body */
+        }
+        body {
+  padding-top: 1000px;
+}
+        body {
             background: url('https://daniclases.github.io/indicelogica.png') no-repeat center center fixed;
             background-size: cover;
-            height: 100vh;
-            overflow: hidden;
             position: relative;
         }
         .responsive-element {
-            position: absolute;
+            position: relative;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -30,24 +36,48 @@
             justify-content: center;
             flex-wrap: wrap;
             z-index: 2;
-            overflow-y: auto;
         }
-        .temas-lista {
-            list-style-type: decimal;
-            padding-left: 20px;
-        }
-        .temas-lista li {
-            margin: 10px 0;
+        .boton-imagen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 40px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.7);
             cursor: pointer;
-            transition: color 0.3s;
-            font-size: 20px;
+            width: 300px;
+            height: 300px;
+            border-radius: 150px;
+            overflow: hidden;
+            position: relative;
+            transition: opacity 0.3s;
         }
-        .temas-lista li a {
-            text-decoration: none;
-            color: inherit;
+        .boton-imagen:hover {
+            opacity: 0.8;
+            box-shadow: 0 0 15px #FF9933, 0 0 20px #FF9933, 0 0 25px #FF9933, 0 0 30px #FF9933;
         }
-        .temas-lista li:hover {
-            color: #FF9933;
+        .boton-imagen span {
+            z-index: 3;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .boton-imagen img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
         }
         .logo {
             position: absolute;
@@ -66,6 +96,29 @@
                 height: auto;
                 padding-bottom: 20px;
             }
+            .boton-imagen {
+                margin: 20px;
+            }
+        }
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: blue; /* color de fondo del thumb */
+            border: 3px solid orange; /* borde del thumb */
+            border-radius: 10px; /* redondez del thumb */
+            box-shadow: inset 0 0 6px rgba(0,0,0,0.5); /* sombra interna del thumb */
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555; /* color de fondo del thumb al pasar el ratón */
+        }
+        /* Works on Firefox */
+        * {
+          scrollbar-color: blue orange; /* color del thumb y del track */
+          scrollbar-width: thin; /* ancho de la barra de desplazamiento */
         }
     </style>
 </head>
@@ -74,9 +127,10 @@
         <img src="https://daniclases.github.io/Yo%20blog.png" alt="Logo">
     </a>
     <div class="responsive-element">
-        <ul class="temas-lista">
-            
-        </ul>
+         <button class="boton-imagen" onclick="window.location.href='https://sites.google.com/view/el-conocimiento-introduccion'">
+            <span>Introducción</span>
+            <img src="https://daniclases.github.io/botonconocimientointroduccion.png" alt="Introducción">
+        </button>
     </div>
 </body>
 </html>
