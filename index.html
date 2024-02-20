@@ -86,6 +86,7 @@
     width: 50px; /* Ancho de la imagen */
     height: 50px; /* Alto de la imagen */
     transition: transform 0.5s ease; /* Suaviza la transición */
+    pointer-events: auto; /* Habilita eventos del puntero para esta imagen */
   }
         .imagen-centrada {
     position: fixed;
@@ -160,7 +161,7 @@
             <img src="https://daniclases.github.io/botoneventosespeciales.jpg" alt="Eventos">
         </button>
     </div>
-    <img src="https://daniclases.github.io/qr.jpg" alt="Código QR" class="imagen-inferior-derecha">
+    <img src="https://daniclases.github.io/qr.jpg" alt="Código QR" class="imagen-inferior-derecha" id="imagenOriginal">
     <img src="https://daniclases.github.io/qr.jpg" alt="Imagen Duplicada" class="imagen-centrada" id="imagenDuplicada">
 
 <script>
