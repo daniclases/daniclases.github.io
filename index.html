@@ -87,12 +87,14 @@
     height: 50px; /* Alto de la imagen */
     transition: transform 0.5s ease; /* Suaviza la transición */
     pointer-events: auto; /* Habilita eventos del puntero para esta imagen */
-    z-index: 99; /* Asegúrate de que la imagen esté sobre otros elementos */
   }
-        .imagen-inferior-derecha:hover {
-    transform: translate(-50%, -50%) scale(6); /* Mueve y aumenta el tamaño de la imagen */
-    bottom: 50%; /* Posiciona en el centro verticalmente */
-    right: 50%; /* Posiciona en el centro horizontalmente */
+        .imagen-centrada {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(8); /* Escala la imagen al doble de su tamaño original */
+    display: none; /* Oculta inicialmente la imagen centrada */
+    z-index: 100; /* Asegúrate de que la imagen centrada esté por encima de otros elementos */
   }
         .logo {
             position: absolute;
@@ -160,5 +162,19 @@
         </button>
     </div>
     <img src="https://daniclases.github.io/qr.jpg" alt="Código QR" class="imagen-inferior-derecha">
+    <img src="https://daniclases.github.io/qr.jpg" alt="Imagen Duplicada" class="imagen-centrada" id="imagenDuplicada">
+
+<script>
+  // JavaScript para duplicar la imagen y centrarla
+  document.getElementById('imagenOriginal').addEventListener('mouseover', function() {
+    var imagenCentrada = document.getElementById('imagenDuplicada');
+    imagenCentrada.src = this.src; // Establece la fuente de la imagen duplicada
+    imagenCentrada.style.display = 'block'; // Muestra la imagen centrada
+  });
+
+  document.getElementById('imagenOriginal').addEventListener('mouseout', function() {
+    document.getElementById('imagenDuplicada').style.display = 'none'; // Oculta la imagen centrada
+  });
+</script>
 </body>
 </html>
