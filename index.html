@@ -13,10 +13,10 @@
             --color-fondo-texto-boton: rgba(0, 0, 0, 0.5);
         }
         body {
-            height: 100vh;
+            height: auto;
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            overflow-y: auto;
             background: url('https://daniclases.github.io/fondopaginawebinicio.png') no-repeat center center fixed;
             background-size: cover;
             position: relative;
@@ -33,7 +33,7 @@
             height: 100px;
         }
         .responsive-element {
-            position: absolute;
+            position: relative;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -117,10 +117,10 @@
             }
         }
         ::-webkit-scrollbar {
-            display: none;
+            width: 0;
         }
         * {
-            scrollbar-width: none;
+            scrollbar-width: thin;
         }
     </style>
 </head>
@@ -133,19 +133,19 @@
             <span>Educación en valores cívicos y éticos 2ºESO</span>
             <img src="https://daniclases.github.io/justicia.png" alt="Imagen de justicia">
         </button>
-        <button class="boton-imagen" data-href="https://daniclases.github.io/ERRSS/index.html'">
+        <button class="boton-imagen" data-href="https://daniclases.github.io/ERRSS/index.html">
             <span>Ética en las redes sociales 2ºESO</span>
             <img src="https://daniclases.github.io/ERRSS.jpg" alt="Ética en las redes sociales 2ºESO">
         </button>
-        <button class="boton-imagen" data-href="https://daniclases.github.io/introfilo4/index.html'">
+        <button class="boton-imagen" data-href="https://daniclases.github.io/introfilo4/index.html">
             <span>Introducción a la filosofía 4ºESO</span>
             <img src="https://daniclases.github.io/introfilo4.jpeg" alt="Introducción a la filosofía 4ºESO">
         </button>
-        <button class="boton-imagen" data-href="https://daniclases.github.io/filosofia/index.html'">
+        <button class="boton-imagen" data-href="https://daniclases.github.io/filosofia/index.html">
             <span>Filosofía 1ºBach</span>
             <img src="https://daniclases.github.io/pensador.jpg" alt="Filosofía 1ºBach">
         </button>
-        <button class="boton-imagen" data-href="https://daniclases.github.io/historia/index.html'">
+        <button class="boton-imagen" data-href="https://daniclases.github.io/historia/index.html">
             <span>Historia de la Filosofía 2ºBach</span>
             <img src="https://daniclases.github.io/historiaboton.png" alt="Historia de la Filosofía 2ºBach">
         </button>
@@ -157,7 +157,10 @@
             const botones = document.querySelectorAll('.boton-imagen');
             botones.forEach(boton => {
                 boton.addEventListener('click', function() {
-                    window.location.href = this.dataset.href;
+                    const href = this.getAttribute('data-href');
+                    if (href) {
+                        window.location.href = href;
+                    }
                 });
             });
 
