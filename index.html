@@ -15,13 +15,13 @@
             height: 100%; /* Ajuste para asegurar que el body tome toda la altura */
             margin: 0;
             padding: 0;
-            overflow-y: hidden; /* Aplicar desplazamiento al body */
+            overflow-y: auto; /* Aplicar desplazamiento al body */
         }
         body {
-  padding-top: 10px;
+  padding-top: 200px;
 }
         body {
-            background: url('https://daniclases.github.io/fondoweb.jpg') no-repeat center center fixed;
+            background: url('https://daniclases.github.io/fondopaginawebinicio.png') no-repeat center center fixed;
             background-size: cover;
             position: relative;
         }
@@ -119,6 +119,26 @@
                 margin: 20px;
             }
         }
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: blue; /* color de fondo del thumb */
+            border: 3px solid orange; /* borde del thumb */
+            border-radius: 10px; /* redondez del thumb */
+            box-shadow: inset 0 0 6px rgba(0,0,0,0.5); /* sombra interna del thumb */
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555; /* color de fondo del thumb al pasar el ratón */
+        }
+        /* Works on Firefox */
+        * {
+          scrollbar-color: blue orange; /* color del thumb y del track */
+          scrollbar-width: thin; /* ancho de la barra de desplazamiento */
+        }
     </style>
 </head>
 <body>
@@ -126,13 +146,25 @@
         <img src="https://daniclases.github.io/Yo%20blog.png" alt="Logo">
     </a>
     <div class="responsive-element">
-         <button class="boton-imagen" onclick="window.location.href='https://daniclases.github.io/Filosof%C3%ADa/index.html'">
-             <span>Filosofía</span>
-            <img src="https://daniclases.github.io/filosofia.jpg" alt="Filosofía">
+         <button class="boton-imagen" onclick="window.location.href='https://daniclases.github.io/evcye/'">
+             <span>Educación en valores cívicos y éticos 2ºESO</span>
+            <img src="https://daniclases.github.io/justicia.png" alt="Educación en valores cívicos y éticos 2ºESO">
         </button>
-         <button class="boton-imagen" onclick="window.location.href='https://daniclases.github.io/Religi%C3%B3n/index.html'">
-             <span>Religión</span>
-            <img src="https://daniclases.github.io/religion.jpg" alt="Religión">
+         <button class="boton-imagen" onclick="window.location.href='https://daniclases.github.io/ERRSS/index.html'">
+             <span>Ética en las redes sociales 2ºESO</span>
+            <img src="https://daniclases.github.io/ERRSS.jpg" alt="Ética en las redes sociales 2ºESO">
+        </button>
+         <button class="boton-imagen" onclick="window.location.href='https://daniclases.github.io/introfilo4/index.html'">
+             <span>Introducción a la filosofía 4ºESO</span>
+            <img src="https://daniclases.github.io/introfilo4.jpeg" alt="Introducción a la filosofía 4ºESO">
+        </button>
+        <button class="boton-imagen" onclick="window.location.href='https://daniclases.github.io/filosofia/index.html'">
+            <span>Filosofía 1ºBach</span>
+            <img src="https://daniclases.github.io/pensador.jpg" alt="Filosofía 1ºBach">
+        </button>
+        <button class="boton-imagen" onclick="window.location.href='https://daniclases.github.io/historia/index.html'">
+            <span>Historia de la Filosofía 2ºBach</span>
+            <img src="https://daniclases.github.io/historiaboton.png" alt="Historia de la Filosofía 2ºBach">
         </button>
     </div>
     <img src="https://daniclases.github.io/qr.jpg" alt="Código QR" class="imagen-inferior-derecha" id="imagenOriginal">
