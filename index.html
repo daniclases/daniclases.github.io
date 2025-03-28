@@ -1,32 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dani clases</title>
     <link rel="icon" type="image/png" href="https://daniclases.github.io/Yo%20blog.png">
     <style>
-         img {
-            pointer-events: none;
-            user-select: none;
+        :root {
+            --color-principal: #FF9933;
+            --color-fondo-boton: rgba(255, 255, 255, 0.7);
+            --color-texto-boton: white;
+            --color-fondo-texto-boton: rgba(0, 0, 0, 0.5);
         }
-        .unselectable {
-            user-select: none;
-        }
-        html, body {
-            height: 100%; /* Ajuste para asegurar que el body tome toda la altura */
+        body {
+            height: 100vh;
             margin: 0;
             padding: 0;
-            overflow-y: auto; /* Aplicar desplazamiento al body */
-        }
-        body {
-  padding-top: 200px;
-}
-        body {
+            overflow: hidden;
             background: url('https://daniclases.github.io/fondopaginawebinicio.png') no-repeat center center fixed;
             background-size: cover;
             position: relative;
+            padding-top: 200px;
+        }
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 3;
+        }
+        .logo img {
+            width: 100px;
+            height: 100px;
         }
         .responsive-element {
-            position: relative;
+            position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -44,7 +51,7 @@
             justify-content: center;
             margin: 20px 40px;
             border: none;
-            background-color: rgba(255, 255, 255, 0.7);
+            background-color: var(--color-fondo-boton);
             cursor: pointer;
             width: 300px;
             height: 300px;
@@ -55,7 +62,7 @@
         }
         .boton-imagen:hover {
             opacity: 0.8;
-            box-shadow: 0 0 15px #FF9933, 0 0 20px #FF9933, 0 0 25px #FF9933, 0 0 30px #FF9933;
+            box-shadow: 0 0 15px var(--color-principal), 0 0 20px var(--color-principal), 0 0 25px var(--color-principal), 0 0 30px var(--color-principal);
         }
         .boton-imagen span {
             z-index: 3;
@@ -65,8 +72,8 @@
             transform: translate(-50%, -50%);
             font-size: 24px;
             font-weight: bold;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.5);
+            color: var(--color-texto-boton);
+            background-color: var(--color-fondo-texto-boton);
             padding: 5px 10px;
             border-radius: 10px;
             text-align: center;
@@ -80,33 +87,23 @@
             z-index: 2;
         }
         .imagen-inferior-derecha {
-    position: fixed; /* Posición fija respecto al viewport, lo que hace que siempre esté visible */
-    bottom: 0; /* Abajo del todo */
-    right: 0; /* A la derecha del todo */
-    width: 50px; /* Ancho de la imagen */
-    height: 50px; /* Alto de la imagen */
-    transition: transform 0.5s ease; /* Suaviza la transición */
-    pointer-events: auto; /* Habilita eventos del puntero para esta imagen */
-  }
-        .imagen-centrada {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Escala la imagen al doble de su tamaño original */
-    display: none; /* Oculta inicialmente la imagen centrada */
-    z-index: 100; /* Asegúrate de que la imagen centrada esté por encima de otros elementos */
-    width: 400px; /* Nuevo ancho */
-    height: 400px; /* Nueva altura */
-  }
-        .logo {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            z-index: 3;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 50px;
+            transition: transform 0.5s ease;
+            pointer-events: auto;
         }
-        .logo img {
-            width: 100px;
-            height: 100px;
+        .imagen-centrada {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            z-index: 100;
+            width: 400px;
+            height: 400px;
         }
         @media (max-width: 768px) {
             .responsive-element {
@@ -120,67 +117,65 @@
             }
         }
         ::-webkit-scrollbar {
-            width: 10px;
+            display: none;
         }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        ::-webkit-scrollbar-thumb {
-            background-color: blue; /* color de fondo del thumb */
-            border: 3px solid orange; /* borde del thumb */
-            border-radius: 10px; /* redondez del thumb */
-            box-shadow: inset 0 0 6px rgba(0,0,0,0.5); /* sombra interna del thumb */
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555; /* color de fondo del thumb al pasar el ratón */
-        }
-        /* Works on Firefox */
         * {
-          scrollbar-color: blue orange; /* color del thumb y del track */
-          scrollbar-width: thin; /* ancho de la barra de desplazamiento */
+            scrollbar-width: none;
         }
     </style>
 </head>
 <body>
     <a href="https://daniclases.github.io/" class="logo">
-        <img src="https://daniclases.github.io/Yo%20blog.png" alt="Logo">
+        <img src="https://daniclases.github.io/Yo%20blog.png" alt="Logo de Dani clases">
     </a>
     <div class="responsive-element">
-         <button class="boton-imagen" onclick="window.location.href='https://daniclases.github.io/evcye/'">
-             <span>Educación en valores cívicos y éticos 2ºESO</span>
-            <img src="https://daniclases.github.io/justicia.png" alt="Educación en valores cívicos y éticos 2ºESO">
+        <button class="boton-imagen" data-href="https://daniclases.github.io/evcye/">
+            <span>Educación en valores cívicos y éticos 2ºESO</span>
+            <img src="https://daniclases.github.io/justicia.png" alt="Imagen de justicia">
         </button>
-         <button class="boton-imagen" onclick="window.location.href='https://daniclases.github.io/ERRSS/index.html'">
-             <span>Ética en las redes sociales 2ºESO</span>
+        <button class="boton-imagen" data-href="https://daniclases.github.io/ERRSS/index.html'">
+            <span>Ética en las redes sociales 2ºESO</span>
             <img src="https://daniclases.github.io/ERRSS.jpg" alt="Ética en las redes sociales 2ºESO">
         </button>
-         <button class="boton-imagen" onclick="window.location.href='https://daniclases.github.io/introfilo4/index.html'">
-             <span>Introducción a la filosofía 4ºESO</span>
+        <button class="boton-imagen" data-href="https://daniclases.github.io/introfilo4/index.html'">
+            <span>Introducción a la filosofía 4ºESO</span>
             <img src="https://daniclases.github.io/introfilo4.jpeg" alt="Introducción a la filosofía 4ºESO">
         </button>
-        <button class="boton-imagen" onclick="window.location.href='https://daniclases.github.io/filosofia/index.html'">
+        <button class="boton-imagen" data-href="https://daniclases.github.io/filosofia/index.html'">
             <span>Filosofía 1ºBach</span>
             <img src="https://daniclases.github.io/pensador.jpg" alt="Filosofía 1ºBach">
         </button>
-        <button class="boton-imagen" onclick="window.location.href='https://daniclases.github.io/historia/index.html'">
+        <button class="boton-imagen" data-href="https://daniclases.github.io/historia/index.html'">
             <span>Historia de la Filosofía 2ºBach</span>
             <img src="https://daniclases.github.io/historiaboton.png" alt="Historia de la Filosofía 2ºBach">
         </button>
     </div>
     <img src="https://daniclases.github.io/qr.jpg" alt="Código QR" class="imagen-inferior-derecha" id="imagenOriginal">
-    <img src="https://daniclases.github.io/qr.jpg" alt="Imagen Duplicada" class="imagen-centrada" id="imagenDuplicada">
 
-<script>
-  // JavaScript para duplicar la imagen y centrarla
-  document.getElementById('imagenOriginal').addEventListener('mouseover', function() {
-    var imagenCentrada = document.getElementById('imagenDuplicada');
-    imagenCentrada.src = this.src; // Establece la fuente de la imagen duplicada
-    imagenCentrada.style.display = 'block'; // Muestra la imagen centrada
-  });
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const botones = document.querySelectorAll('.boton-imagen');
+            botones.forEach(boton => {
+                boton.addEventListener('click', function() {
+                    window.location.href = this.dataset.href;
+                });
+            });
 
-  document.getElementById('imagenOriginal').addEventListener('mouseout', function() {
-    document.getElementById('imagenDuplicada').style.display = 'none'; // Oculta la imagen centrada
-  });
-</script>
+            const imagenOriginal = document.getElementById('imagenOriginal');
+            const imagenDuplicada = document.createElement('img');
+            imagenDuplicada.src = imagenOriginal.src;
+            imagenDuplicada.alt = "Imagen Duplicada";
+            imagenDuplicada.classList.add('imagen-centrada');
+            document.body.appendChild(imagenDuplicada);
+
+            imagenOriginal.addEventListener('mouseover', function() {
+                imagenDuplicada.style.display = 'block';
+            });
+
+            imagenOriginal.addEventListener('mouseout', function() {
+                imagenDuplicada.style.display = 'none';
+            });
+        });
+    </script>
 </body>
 </html>
